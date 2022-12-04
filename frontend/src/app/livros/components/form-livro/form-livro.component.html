@@ -1,0 +1,36 @@
+<div class="form" [formGroup]="form">
+  <div class="field flex flex-column">
+    <label>Titulo</label>
+    <input type="text" pInputText formControlName="titulo" />
+  </div>
+  <div class="field flex flex-column">
+    <label>Autor</label>
+    <input type="text" pInputText formControlName="autor" />
+  </div>
+  <div class="field flex flex-column">
+    <label>Editora</label>
+    <input type="text" pInputText formControlName="editora" />
+  </div>
+  <div class="field flex flex-column">
+    <label>Ano</label>
+    <input type="text" pInputText formControlName="ano" />
+  </div>
+  <div class="field flex flex-column">
+    <label>Descricao</label>
+    <p-editor
+      formControlName="descricao"
+      class="h-12rem"
+      styleClass="h-8rem"
+    ></p-editor>
+    <!-- <textarea pInputTextarea formControlName="descricao"></textarea> -->
+  </div>
+  <div class="field flex flex-column">
+    <label>Imagem (URL)</label>
+    <input type="text" pInputText formControlName="imagem" />
+  </div>
+  <div *ngIf="errors$ | async as errors" class="error-messages">
+    <div class="" *ngFor="let error of errors">
+      {{ error }}
+    </div>
+  </div>
+</div>
