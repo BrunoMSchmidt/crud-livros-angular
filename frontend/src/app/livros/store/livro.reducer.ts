@@ -16,10 +16,13 @@ export const livroReducer = createReducer(
     novoLivro,
     ...state,
   ]),
-  on(atualizarLivroAPISucesso, (state, { livro }) => [
-    livro,
-    ...state.filter((livroState) => livroState.id !== livro.id),
-  ]),
+  on(atualizarLivroAPISucesso, (state, { livro }) => {
+    const index = state.findIndex(
+      (livroBuscado) => livroBuscado.id == livro.id
+    );
+
+    return [...state.slice(0, index), livro, ...state.slice(index + 1)];
+  }),
   on(deletarLivroAPISucesso, (state, { id }) => [
     ...state.filter((livro) => livro.id !== id),
   ])

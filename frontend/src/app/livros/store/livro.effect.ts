@@ -31,7 +31,6 @@ export class LivroEffect {
       ofType(chamarBuscaLivrosAPI),
       withLatestFrom(this.store.pipe(select(selectLivros))),
       mergeMap(([, livroformStore]) => {
-        console.log('aqui');
         if (livroformStore.length > 0) {
           return EMPTY;
         }

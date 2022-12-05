@@ -4,6 +4,7 @@ import { EffectsModule } from '@ngrx/effects';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
+import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
@@ -15,6 +16,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
+import { ToastModule } from 'primeng/toast';
 import { CardLivroComponent } from './components/card-livro/card-livro.component';
 import { FormLivroComponent } from './components/form-livro/form-livro.component';
 import { LivrosRoutingModule } from './livros-routing.module';
@@ -44,6 +46,7 @@ import { livroReducer } from './store/livro.reducer';
     FormsModule,
     ButtonModule,
     LivrosRoutingModule,
+    ToastModule,
     ConfirmDialogModule,
     StoreModule.forFeature('livros', livroReducer),
     EffectsModule.forFeature([LivroEffect]),
@@ -51,5 +54,6 @@ import { livroReducer } from './store/livro.reducer';
     FocusTrapModule,
     EditorModule,
   ],
+  providers: [MessageService],
 })
 export class LivrosModule {}

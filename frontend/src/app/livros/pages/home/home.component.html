@@ -22,7 +22,9 @@
     </div>
   </div>
 
-  <div class="w-full md:w-10 lg:w-8 mx-auto fadein animation-duration-100">
+  <div
+    class="w-full md:w-10 lg:w-8 mx-auto fadein animation-duration-100 overflow-hidden"
+  >
     <ng-container *ngIf="livros$ | async as livros">
       <div class="grid">
         <app-card-livro

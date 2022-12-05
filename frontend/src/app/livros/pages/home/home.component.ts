@@ -58,8 +58,8 @@ export class HomeComponent {
           })
         );
         let apiStatus$ = this.appStore.pipe(select(selectAppState));
-        apiStatus$.subscribe((apState) => {
-          if (apState.apiStatus == 'sucesso') {
+        apiStatus$.subscribe((appState) => {
+          if (appState.apiStatus == 'sucesso') {
             this.appStore.dispatch(
               setAPIStatus({
                 apiStatus: { apiResponseMessage: '', apiStatus: '' },
