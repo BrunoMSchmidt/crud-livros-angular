@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { StoreModule } from '@ngrx/store';
-import { FormLivroComponent } from '../../components/form/form-livro.component';
+import { FormLivroComponent } from '../../components/form-livro/form-livro.component';
 
 import { livroReducer } from '../../store/livro.reducer';
 import { CadastrarComponent } from './cadastrar.component';
